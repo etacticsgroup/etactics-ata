@@ -1,0 +1,564 @@
+  <!doctype html>
+  <html lang="en">
+<head>
+      <!-- Required meta tags -->
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <!-- Bootstrap CSS -->
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
+      <!-- Custom Style -->
+      
+      <link href="assets/css/main.css" rel="stylesheet" type="text/css">
+      
+      <!-- Font Awesome Icons -->
+      <script src="https://kit.fontawesome.com/c3b711e95e.js" crossorigin="anonymous"></script>
+      <!-- Witness Page -->
+      <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<!-- Witness Page -->
+      <title>Automata Network</title>
+</head>
+<nav class="navbar navbar-light navbar-expand-lg bg-white fixed-top top-position pb-0">
+      <div class="container-fluid">
+        <div class="alert alert-fixed alert-secondary border-secondary text-center mb-0 p-2" role="alert">
+          <span class="badge bg-secondary me-4 font-initial">News</span>
+          <a href="https://medium.com/atanetwork/our-partnership-with-plasm-56605d6f2d16" class="alert-link">
+            Read</a>
+              about our latest partnership with Plasm.
+        </div>
+        <a class="navbar-brand mx-4" href="">
+        <img src="assets/img/ata-logo.png" alt="" height="40" class="d-inline-block align-text-top">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0 mx-4">
+    <!-- <li class="nav-item dropdown">
+              <a class="nav-link hover-ata text-bold text-ata rounded mx-3" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color:#fb641d;">
+                About
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li><a class="dropdown-item" href="#">Technology</a></li>
+                <li><a class="dropdown-item" href="#">Roadmap</a></li>
+                <li><a class="dropdown-item" href="#">Team</a></li>
+              </ul>
+            </li> -->
+            <li class="nav-item dropdown">
+              <a class="nav-link hover-ata text-bold text-ata rounded mx-3" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false"style="color:#fb641d;">
+                Solutions
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li><a class="dropdown-item" href="/witness/">Witness</a></li>
+                <li><a class="dropdown-item" href="#">Conveyor</a></li>
+              </ul>
+            </li>
+            <!-- <li class="nav-item dropdown">
+              <a class="nav-link hover-ata text-bold text-ata rounded mx-3" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false"style="color:#fb641d;">
+                Resources
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li><a class="dropdown-item" href="#">Developer</a></li>
+                <li><a class="dropdown-item" href="#">Community</a></li>
+                <li><a class="dropdown-item" href="#">Blog</a></li>
+              </ul>
+            </li> -->
+          </ul>
+          <span class="navbar-text mx-4 text-dark">
+            <!-- MEV Wiki Link -->
+            <a class="text-dark hover-black text-decoration-none" href="http://mev.wiki" target="_blank"><span class="mr-10px">MEV Wiki</span></a>
+            <!-- Twitter SVG -->
+            <a class="text-decoration-none" href="https://twitter.com/@automatanetwork" target="_blank">
+                <svg data-v-3e5d8293="" class="mx-2 mb-1" fill="#000" id="share-icon" viewBox="0 0 24 24" width="18" xmlns="http://www.w3.org/2000/svg"><path data-v-3e5d8293="" d="m21.534 7.113c.976-.693 1.797-1.558 2.466-2.554v-.001c-.893.391-1.843.651-2.835.777 1.02-.609 1.799-1.566 2.165-2.719-.951.567-2.001.967-3.12 1.191-.903-.962-2.19-1.557-3.594-1.557-2.724 0-4.917 2.211-4.917 4.921 0 .39.033.765.114 1.122-4.09-.2-7.71-2.16-10.142-5.147-.424.737-.674 1.58-.674 2.487 0 1.704.877 3.214 2.186 4.089-.791-.015-1.566-.245-2.223-.606v.054c0 2.391 1.705 4.377 3.942 4.835-.401.11-.837.162-1.29.162-.315 0-.633-.018-.931-.084.637 1.948 2.447 3.381 4.597 3.428-1.674 1.309-3.8 2.098-6.101 2.098-.403 0-.79-.018-1.177-.067 2.18 1.405 4.762 2.208 7.548 2.208 8.683 0 14.342-7.244 13.986-14.637z"></path><path data-v-3e5d8293="" d=""></path><path data-v-3e5d8293="" d=""></path></svg>
+            </a>
+            <!-- Medium SVG -->
+                <a class="text-decoration-none" href="https://medium.com/atanetwork" target="_blank">
+                <svg data-v-3e5d8293="" class="mx-2 mb-1" fill="#000" id="share-icon" viewBox="0 0 24 24" width="18" xmlns="http://www.w3.org/2000/svg"><path data-v-3e5d8293="" d="m22.085 4.733 1.915-1.832v-.401h-6.634l-4.728 11.768-5.379-11.768h-6.956v.401l2.237 2.693c.218.199.332.49.303.783v10.583c.069.381-.055.773-.323 1.05l-2.52 3.054v.396h7.145v-.401l-2.52-3.049c-.273-.278-.402-.663-.347-1.05v-9.154l6.272 13.659h.729l5.393-13.659v10.881c0 .287 0 .346-.188.534l-1.94 1.877v.402h9.412v-.401l-1.87-1.831c-.164-.124-.249-.332-.214-.534v-13.467c-.035-.203.049-.411.213-.534z"></path><path data-v-3e5d8293="" d=""></path><path data-v-3e5d8293="" d=""></path></svg>
+              </a>
+              <!-- Github SVG -->
+              <a class="text-decoration-none" href="https://github.com/automata-network" target="_blank">
+                <svg data-v-3e5d8293="" class="mx-2 mb-1" fill="#000" id="share-icon" viewBox="0 0 24 24" width="18" xmlns="http://www.w3.org/2000/svg"><path data-v-3e5d8293="" d="m12 .5c-6.63 0-12 5.28-12 11.792 0 5.211 3.438 9.63 8.205 11.188.6.111.82-.254.82-.567 0-.28-.01-1.022-.015-2.005-3.338.711-4.042-1.582-4.042-1.582-.546-1.361-1.335-1.725-1.335-1.725-1.087-.731.084-.716.084-.716 1.205.082 1.838 1.215 1.838 1.215 1.07 1.803 2.809 1.282 3.495.981.108-.763.417-1.282.76-1.577-2.665-.295-5.466-1.309-5.466-5.827 0-1.287.465-2.339 1.235-3.164-.135-.298-.54-1.497.105-3.121 0 0 1.005-.316 3.3 1.209.96-.262 1.98-.392 3-.398 1.02.006 2.04.136 3 .398 2.28-1.525 3.285-1.209 3.285-1.209.645 1.624.24 2.823.12 3.121.765.825 1.23 1.877 1.23 3.164 0 4.53-2.805 5.527-5.475 5.817.42.354.81 1.077.81 2.182 0 1.578-.015 2.846-.015 3.229 0 .309.21.678.825.56 4.801-1.548 8.236-5.97 8.236-11.173 0-6.512-5.373-11.792-12-11.792z"></path><path data-v-3e5d8293="" d=""></path><path data-v-3e5d8293="" d=""></path></svg>
+              </a>
+          </span>
+        </div>
+      </div>
+    </nav>
+    <body class="bg-white pt-80px">
+      <!-- 1 - Main Banner Section -->
+      <section class="main-banner-bg vh-90">
+        <div class="container pt-5">
+          <div class="row pt-5">
+            <div class="col-md-12 col-lg-12 col-sm-12 pt-5">
+              <h1 class="responsive-font-h1 p-2 text-bold text-white text-center">Achieve privacy, high assurance</h1>
+              <h1 class="responsive-font-h1 p-2 text-bold text-white text-center">and frictionless computation</h1>
+              <h1 class="p-2 text-center">
+                <a class="white-cta-btn font-size-button text-bold m-4 p-4 btn btn-light text-ata" href="https://witness.ata.network/" target="_blank">Explore Solutions</a>
+              </h1>
+              <div class="bubble-wrap">
+                <div class="bubbles">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- 1 - Main Banner Section -->
+
+      <!-- 2 - Logo Banner Section -->
+      <section class="bg-white py-4">
+        <div class="container border-dark">
+          <div class='row text-center'>
+            <div class='col-md-2 col-sm-2 col-4 mx-auto'>
+              <div class='img-fluid'>
+                <a target="_blank" href="https://www.coindesk.com/automata-network-launches-with-1m-in-funding-to-help-keep-dapps-private">
+                  <img class='logo-image' src='assets/img/coindesk-logo.png'>
+                </a>
+              </div>
+            </div>
+            <div class='col-md-2 col-sm-2 col-4 mx-auto'>
+              <div class='img-fluid'>
+                <a target="_blank" href="https://news.yahoo.com/automata-network-launches-1m-funding-160013946.html?guccounter=2">
+                  <img class='logo-image' src='assets/img/yahoo-logo.png'>
+                </a>
+              </div>
+            </div>
+            <div class='col-md-2 col-sm-2 col-4 mx-auto'>
+              <div class='img-fluid'>
+                <a target="_blank" href="https://www.techinasia.com/blockchain-tech-startup-automata-network-launches-1m-seed-raise">
+                  <img class='logo-image' src='assets/img/techinasia-logo.png'>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- 2 - Logo Banner Section -->
+
+      <!-- 3 - Technology Section -->
+      <section class="py-4 technology-banner-bg">
+        <div class='container pt-4'>
+          <!-- Replacing Text Section -->
+          <div class="row">
+            <div class='col-md-12'>
+              <h3 class='text-center px-10'>Building the last piece of the Web 3.0 puzzle</h3>
+            </div>
+            <div class='col-md-12 my-2 py-2 pb-4 mb-4'>
+              <div class="content">
+                <div class="slider-wrapper desktop-only">
+                  <div class="text-slider text-right">
+                    <div class="slider-up text-right">MEV Prevention</div>
+                    <div class=" text-right">Governance </div>
+                    <div class=" text-right">MEV Prevention</div>
+                  </div>
+                  <span class="pt-10px">
+                    using
+                  </span>
+                  <div class="text-slider text-left">
+                    <div class="slider-down text-left">Conveyor</div>
+                    <div class="text-left">Witness</div>
+                    <div class="text-left">Conveyor</div>
+                  </div>
+                </div>
+                <div class="slider-wrapper mobile-only">
+                  <div class="row">
+                    <div class="col-sm-12">
+                      <div class="text-slider">
+                        <div class="slider-up">MEV Prevention</div>
+                        <div class="">Governance </div>
+                        <div class="">MEV Prevention</div>
+                      </div>
+                    </div>
+                    <div class="col-sm-12 text-center">
+                      <span class="pt-10px">
+                        using</span>
+                    </div>
+                    <div class="col-sm-12">
+                      <div class="text-slider">
+                        <div class="slider-down">Conveyor</div>
+                        <div class="">Witness</div>
+                        <div class="">Conveyor</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>       
+              </div>
+            </div>
+          </div>
+          <!-- End Replacing Text Section -->
+          <div class="row text-left mx-auto mb-4 pb-4">
+            <div class="col-md-4 col-sm-12 col-lg-4 pb-5 mx-auto">
+              <div class="card bg-light rounded-card shadow-lg mh-390 text-center pt-4 mx-4 technology-card-shadow">
+                <lord-icon src="https://cdn.lordicon.com//zpxybbhl.json" trigger="hover" colors="primary:#121331,secondary:#fb641d"class="technology-lord-icon">
+                </lord-icon>
+                <div class="card-body">
+                  <h5 class="card-title text-ata text-center text-bold pb-2" style="">Traceless Privacy</h5>
+                  <p class="card-text mobile-text-center card-text-ata">Anonymous voting for DAOs</p>
+                  <p class="card-text mobile-text-center card-text-ata">Secret messaging between networks</p>
+                  <p class="card-text mobile-text-center card-text-ata">Do-not-track querying for indexers</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4 col-sm-12 col-lg-4 pb-5 mx-auto">
+              <div class="card bg-light rounded-card shadow-lg mh-390 text-center pt-4 mx-4 technology-card-shadow">
+              <lord-icon src="https://cdn.lordicon.com//ktxpktdd.json" trigger="hover" colors="primary:#121331,secondary:#fb641d" class="technology-lord-icon">
+              </lord-icon>
+                <div class="card-body">
+                  <h5 class="card-title text-ata text-center text-bold pb-2" style="">High Assurance</h5>
+                  <p class="card-text mobile-text-center card-text-ata">Front-running prevention for DEXs</p>
+                  <p class="card-text mobile-text-center card-text-ata">Tamper-proof data sourcing for oracles</p>
+                  <p class="card-text mobile-text-center card-text-ata">Robust randomness for apps</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4 col-sm-12 col-lg-4 pb-5 mx-auto">
+              <div class="card bg-light rounded-card shadow-lg mh-390 text-center pt-4 mx-4 technology-card-shadow">
+              <lord-icon src="https://cdn.lordicon.com//wcjauznf.json" trigger="hover" colors="primary:#121331,secondary:#fb641d" class="technology-lord-icon">
+              </lord-icon>
+                <div class="card-body">
+                  <h5 class="card-title text-ata text-center text-bold pb-2" style="">Frictionless Computation</h5>
+                  <p class="card-text mobile-text-center card-text-ata">Speedy cross-chain transactions</p>
+                  <p class="card-text mobile-text-center card-text-ata">Sub-second layer 2 for chains</p>
+                  <p class="card-text mobile-text-center card-text-ata">Non-intrusive protection for DeFi</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-12 col-lg-12 col-sm-12 mt-4 pt-4 text-center">
+              <h1 class="p-2 text-center" ><a target="_blank"href="https://medium.com/atanetwork/technical/home "class="orange-cta-btn ata-secondary font-size-button m-4 p-4 btn text-white bg-ata" style="">Discover our Technology</a></h1>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- 3 - Technology Section -->
+
+      <!-- 4 - Testimonial Section -->
+      <section class="py-5 my-5">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12 col-sm-12 col-lg-10 mx-auto">
+              <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner shadow testimonials-card-rounded">
+                <!-- Testimonial 1 -->
+                  <div class="carousel-item active">
+                    <div class="row">
+                      <div class="col-md-4 col-lg-4 testimonials-card-logo-container bg-dark">
+                        <div class="mx-auto text-center p-relative">
+                          <img src="assets/img/plasm-logo.png" class="testimonials-card-logo" alt="...">
+                        </div>
+                      </div>
+                      <div class="col-md-8 col-lg-8 my-auto">
+                        <div class="mx-5 py-4 mx-0-mobile">
+                          <p>"We quickly understood the ideological relevance of Witness in relation to our mission of building out the infrastructure for Web3. With its privacy-first mandate, this partnership will add to our ecosystem meaningfully."</p>
+                          <p class="text-bold">Sota Watanabe | Founder of Plasm</p>
+                          <a href="https://medium.com/atanetwork/our-partnership-with-plasm-56605d6f2d16"  class="text-decoration-none text-ata hover-gray">Learn more</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Testimonial 1 -->
+                  <!-- Testimonial 2 -->
+                  <div class="carousel-item">
+                    <div class="row">
+                      <div class="col-md-4 col-lg-4 testimonials-card-logo-container bg-dark">
+                        <div class="mx-auto text-center p-relative">
+                          <img src="assets/img/clover-logo.png" class="testimonials-card-logo" alt="...">
+                        </div>
+                      </div>
+                      <div class="col-md-8 col-lg-8 my-auto">
+                        <div class="mx-5 py-4 mx-0-mobile">
+                          <p>“Amidst heightened expectations around privacy, Witness is on the next wave of innovation that allows those working on decentralisation to build one level up from there."</p>
+                          <p class="text-bold">Norelle Ng | Co-Founder at Clover Finance</p>
+                          <a href="https://medium.com/atanetwork/our-partnership-with-clover-finance-7494f3402a6d" class="text-decoration-none text-ata learn-more-hover">Learn more</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Testimonial 2 -->
+                  <!-- Testimonial 3 -->
+                  <div class="carousel-item">
+                    <div class="row">
+                      <div class="col-md-4 col-lg-4 testimonials-card-logo-container bg-dark">
+                        <div class="mx-auto text-center p-relative">
+                          <img src="assets/img/crust-logo.png" class="testimonials-card-logo" alt="...">
+                        </div>
+                      </div>
+                      <div class="col-md-8 col-lg-8 my-auto">
+                        <div class="mx-5 py-4 mx-0-mobile">
+                          <p>“With its singular focus on privacy, Witness will bolster our efforts of remaining committed to users’ autonomy and control as the confluence of blockchain and data ecosystems continue to grow."</p>
+                          <p class="text-bold"> Crust Network </p>
+                          <a href="https://medium.com/atanetwork/our-partnership-with-crust-c7edeb501998"  class="text-decoration-none text-ata learn-more-hover">Learn more</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Testimonial 3 -->
+                  <!-- Testimonial 4 -->
+                  <div class="carousel-item">
+                    <div class="row">
+                      <div class="col-md-4 col-lg-4 testimonials-card-logo-container bg-dark">
+                        <div class="mx-auto text-center p-relative">
+                          <img src="assets/img/bounce-logo.png" class="testimonials-card-logo" alt="...">
+                        </div>
+                      </div>
+                      <div class="col-md-8 col-lg-8 my-auto">
+                        <div class="mx-5 py-4 mx-0-mobile">
+                          <p>"Community voting is such a crucial element of sound governance. As our community continues to grow from strength to strength, Witness will allow the process of decision-making to become truly private and democratic."</p>
+                          <p class="text-bold"> Chandler Song | Co-Founder at Bounce Finance </p>
+                          <a href="https://medium.com/atanetwork/our-partnership-with-bounce-17a2fe3cd352"  class="text-decoration-none text-ata learn-more-hover">Learn more</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Testimonial 4 -->
+                  <!-- Testimonial 5 -->
+                  <div class="carousel-item">
+                    <div class="row">
+                      <div class="col-md-4 col-lg-4 testimonials-card-logo-container bg-dark">
+                        <div class="mx-auto text-center p-relative">
+                          <img src="assets/img/mathwallet-logo.png" class="testimonials-card-logo" alt="...">
+                        </div>
+                      </div>
+                      <div class="col-md-8 col-lg-8 my-auto">
+                        <div class="mx-5 py-4 mx-0-mobile">
+                          <p>"The partnership with Automata Network will empower MathWallet to provide privacy-protection operations to our wallet users, which is an important feature for the next-generation crypto wallet."</p>
+                          <p class="text-bold"> Eric Yu | CTO of Math</p>
+                          <a href="https://medium.com/atanetwork/our-partnership-with-mathwallet-5fd7fe7255d6"  class="text-decoration-none text-ata learn-more-hover">Learn more</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Testimonial 5 -->
+                  <!-- Testimonial 6 -->
+                  <div class="carousel-item">
+                    <div class="row">
+                      <div class="col-md-4 col-lg-4 testimonials-card-logo-container bg-dark">
+                        <div class="mx-auto text-center p-relative">
+                          <img src="assets/img/celer-logo.png" class="testimonials-card-logo" alt="...">
+                        </div>
+                      </div>
+                      <div class="col-md-8 col-lg-8 my-auto">
+                        <div class="mx-5 py-4 mx-0-mobile">
+                          <p>"We see Witness as a unique solution to some of the most challenging issues faced by decentralised project governance including privacy and integrity, while keeping a simple-to-use interface for community members. We are excited to explore the opportunity to work with the Automata team to enable better decentralised governance for applications built on top of Celer."</p>
+                          <p class="text-bold"> Mo Dong | Co-Founder at Celer Network </p>
+                          <a href="https://medium.com/atanetwork/our-partnership-with-celer-network-65b436e8a47c"  class="text-decoration-none text-ata learn-more-hover">Learn more</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Testimonial 6 -->
+                </div>
+              <button class="carousel-control-prev text-dark" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+                <span class="fas fa-arrow-left" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+              </button>
+              <button class="carousel-control-next text-dark" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+                <span class="fas fa-arrow-right" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+              </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- 4 - Testimonial Section -->
+
+      <!-- 5 - News Section -->
+      <section class="py-4">
+        <div class="container">
+          <div class="row mx-auto">
+            <div class='col-md-12 py-4'>
+              <h1 class='text-center px-10 text-bold'>Read the Latest</h1>
+            </div>
+            <div class="col-md-4 col-sm-12 col-lg-4 pb-4">
+              <div class="card mh-430">
+                <img src="assets/img/news-image-1.jpeg" class="card-img-top" alt="...">
+                <div class="card-body mh-260">
+                  <h5 class="card-title mh-65">The Front-running Debate — A look at TradFi</h5>
+                  <p class="card-text">As the topic of MEV (Miner Extractable Value) gains more limelight there’s parallels being drawn between MEV extractors and High Frequency…</p>
+                  <a href="https://medium.com/atanetwork/the-front-running-debate-a-look-at-tradfi-fc27cf24ef7f" class="text-ata hover-black text-decoration-none">Read more</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4 col-sm-12 col-lg-4 pb-4">
+              <div class="card mh-430">
+                <img src="assets/img/news-image-2.jpeg" class="card-img-top" alt="...">
+                <div class="card-body mh-260">
+                  <h5 class="card-title mh-65">Our Partnership with Plasm</h5>
+                  <p class="card-text">An absolute delight to share that we’re partnering up with Plasm to bring Witness as an off-chain governance solution to their network…</p>
+                  <a href=" https://medium.com/atanetwork/our-partnership-with-plasm-56605d6f2d16" class="text-ata hover-black text-decoration-none">Read more</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4 col-sm-12 col-lg-4 pb-4">
+              <div class="card mh-430">
+                <img src="assets/img/news-image-3.jpeg" class="card-img-top" alt="...">
+                <div class="card-body mh-260">
+                  <h5 class="card-title mh-65">Introduction to SGX — Side-Channel Attacks</h5>
+                  <p class="card-text">In our previous post, we provided an introduction to Trusted Execution Environments like Intel SGX. Given that we are able to hermetically seal our documents...</p>
+                  <a href="https://medium.com/atanetwork/introduction-to-sgx-side-channel-attacks-e29f3be854b0" class="text-ata hover-black text-decoration-none">Read more</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- 5 - News Section -->
+      
+      <!-- 6 - Our Investors Section -->
+      <section class="py-4">
+        <div class="container py-4">
+          <div class="row">
+            <div class='col-md-12 pb-4'>
+              <h1 class='text-center px-10 text-bold'>Our Investors</h1>
+            </div>
+          </div>
+
+        <div class="container">
+          <div class="row">
+            <div class="col-md-5ths col-sm-5ths col-4">
+              <a href="https://www.alameda-research.com/" target="_blank">
+                <div>
+                  <img class="responsive-image filter-ata" src="assets/img/alameda-logo.png">
+                </div>
+              </a>
+            </div>
+            <div class="col-md-5ths col-sm-5ths col-4">
+              <a href="https://www.div.vc/ " target="_blank">
+                <div>
+                  <img class="responsive-image filter-ata" src="assets/img/divergence-logo.png">
+                </div>
+              </a>
+            </div>
+            <div class="col-md-5ths col-sm-5ths col-4">
+              <a href="https://gbv.capital/" target="_blank">
+                <div>
+                  <img class="responsive-image filter-ata" src="assets/img/gbv-logo.png">
+                </div>
+              </a>
+            </div>
+            <div class="col-md-5ths col-sm-5ths col-4">
+              <a href="https://iosg.vc/" target="_blank">
+                <div>
+                  <img class="responsive-image filter-ata" src="assets/img/iosg-logo.png">
+                </div>
+              </a>
+            </div>
+            <div class="col-md-5ths col-sm-5ths col-4">
+              <a href="https://www.kryptonite1.co/" target="_blank">
+                <div>
+                  <img class="responsive-image filter-ata" src="assets/img/kr1-logo.png">
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+        </section>
+        <!-- 6 - Our Investors Section -->
+<footer class="ata-footer bg-ata">
+          <div class="container">
+            <div class="row text-left mobile-text-center">
+              <div class="col-md-4 col-lg-4 col-sm-12">
+                <img src="assets/img/ata-logo.png" alt="" height="60" class="d-inline-block align-text-top">
+                <p class="text-white pt-4">Empowering today's dApps with <br>seamless privacy and high assurance</p>
+                <p class="text-white py-4">Stay up-to-date</p>
+                <form>
+                  <div class="input-group mb-3 mobile-text-center">
+                    <input type="text" class="form-control" placeholder="Your email">
+                    <div class="input-group-append">
+                      <button class="btn text-white rounded orange-cta-btn ata-secondary"type="button">Sign up</button>
+                    </div>
+                  </div>
+                </form>
+              </div>
+              <div class="col-md-8 col-lg-8 col-sm-12">
+                <div class="row mobile-text-center">
+                <!-- <div class="col-md-3 col-lg-3 col-sm-12 pb-4">
+                  <div class="text-bold pb-3 pl-0 ml-0 text-dark"><h5>About</h5></div>
+                  <p class="text-white">Technology</p>
+                  <p class="text-white">Roadmap</p>
+                  <p class="text-white">Team</p>
+
+                </div> -->
+                <!-- <div class="col-md-3 col-lg-3 col-sm-12 pb-4">
+                  <div class="text-bold pb-3 pl-0 ml-0 text-dark"><h5>Solutions</h5></div>
+                                  <p class="text-white">Witness</p>
+                  <p class="text-white">Conveyor</p>
+                </div> -->
+<!--                 <div class="col-md-3 col-lg-3 col-sm-12 pb-4">
+                  <div class="text-bold pb-3 pl-0 ml-0 text-dark"><h5>Resources</h5></div>
+                                  <p class="text-white">Developer</p>
+                  <p class="text-white">Community</p>
+                  <p class="text-white">Blog</p>
+                </div>
+                <div class="col-md-3 col-lg-3 col-sm-12 pb-4">
+                <div class="text-bold pb-3 pl-0 ml-0 text-dark"><h5>Social</h5></div>
+                                <p class="text-white">Twitter</p>
+                  <p class="text-white">Github</p>
+                  <p class="text-white">LinkedIn</p>
+                  <p class="text-white">Medium</p>
+                  <p class="text-white">Telegram</p>
+                  <p class="text-white">Discord</p>
+                </div> -->
+                  <div class=" offset-md-6 offset-lg-6 col-md-3 col-lg-3 col-sm-12 pb-4">
+                    <div class="text-bold pb-3 pl-0 ml-0 text-dark">
+                      <h5>Community</h5>
+                    </div>
+                    <a class="text-decoration-none"href="https://twitter.com/@automatanetwork" target="_blank"><p class="text-white pb-2">Twitter</p></a>
+                    <a class="text-decoration-none"href="http://t.me/ata_network" target="_blank"><p class="text-white pb-2">Telegram</p></a>
+                    <a class="text-decoration-none"href="https://t.co/4Vx0xqPMpe" target="_blank"><p class="text-white pb-2">Discord</p></a>
+                  </div>
+                  <div class="col-md-3 col-lg-3 col-sm-12 pb-4">
+                    <div class="text-bold pb-3 pl-0 ml-0 text-dark">
+                      <h5>Resources</h5>
+                    </div>
+                      <a class="text-decoration-none"href="https://github.com/automata-network" target="_blank"><p class="text-white pb-2">Github</p></a>
+                      <a class="text-decoration-none"href="https://medium.com/atanetwork" target="_blank"><p class="text-white pb-2">Medium</p></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </footer>
+      <!-- Lord Icons -->
+      <script src="https://cdn.lordicon.com//libs/frhvbuzj/lord-icon-2.0.2.js"></script>
+      <!-- Bootstrap Bundle with Popper -->
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8" crossorigin="anonymous"></script>
+      <!-- Noise Randomness for Main Banner Spritesheet -->
+      <script type="text/JavaScript" src="https://cdn.rawgit.com/josephg/noisejs/master/perlin.js"></script>
+      <script type="text/JavaScript" src="/assets/js/main.js">
+      </script>
+
+      <!-- Witness Page -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+        <script>
+  AOS.init();
+</script>
+<script>
+  function grayscale_1_3() {
+  $( "#vector1" ).css( "filter", "grayscale(100%)" );
+  $( "#vector3" ).css( "filter", "grayscale(100%)" );
+  $( "#vector2" ).css( "filter", "none" );
+  $( "#text-1").css("display","block");
+  $( "#text-2").css("display","none");
+  $( "#text-3").css("display","none");
+}
+  function grayscale_2_3() {
+  $( "#vector2" ).css( "filter", "grayscale(100%)" );
+  $( "#vector3" ).css( "filter", "grayscale(100%)" );
+  $( "#vector1" ).css( "filter", "none" );
+    $( "#text-1").css("display","none");
+  $( "#text-2").css("display","block");
+  $( "#text-3").css("display","none");
+}
+  function grayscale_1_2() {
+  $( "#vector1" ).css( "filter", "grayscale(100%)" );
+  $( "#vector2" ).css( "filter", "grayscale(100%)" );
+  $( "#vector3" ).css( "filter", "none" );
+  $( "#text-1").css("display","none");
+  $( "#text-2").css("display","none");
+  $( "#text-3").css("display","block");
+}
+  </script>
+  </body>
+</html>
