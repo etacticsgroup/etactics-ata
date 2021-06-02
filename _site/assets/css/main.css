@@ -76,6 +76,8 @@ body { font-family: Avenir; }
 
 .witness-main-banner-bg { background-image: url("https://taosolutions.dev/cloud/wl/?id=bI4fPyajxLT9eDoHFQ3O9Jg88BVIWdPj"); background-position: center center; background-size: cover; background-attachment: fixed; background-size: cover; }
 
+.conveyor-main-banner-bg { background-image: url("../assets/img/conveyor-bg-main.jpeg"); background-position: center center; background-size: cover; background-attachment: fixed; background-size: cover; }
+
 .witness-second-banner-bg { background-image: url("https://etacticsgroup.com/cloud/wl/?id=B99aEGaf2tTTY61gEokVle49gp2NFzSe"); background-position: center center; background-size: cover; background-attachment: fixed; }
 
 .witness-third-banner-bg { background-image: url("https://etacticsgroup.com/cloud/wl/?id=B99aEGaf2tTTY61gEokVle49gp2NFzSe"); background-position: center center; background-size: cover; background-attachment: fixed; }

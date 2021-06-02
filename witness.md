@@ -1,6 +1,6 @@
 ---
 layout: witness
-title: "Automata Network - Homepage"
+title: "Automata Network - Witness"
 permalink: "/witness/"
 ---
 
