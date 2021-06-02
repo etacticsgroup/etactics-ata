@@ -82,7 +82,7 @@ body { font-family: Avenir; }
 
 .witness-third-banner-bg { background-image: url("../img/witness-second-banner.png"); background-position: center center; background-size: cover; background-attachment: fixed; }
 
-.witness-orange-gradient-bg { background-image: url("../img/witness-orange-banner.jpeg"); background-size: cover; }
+.witness-orange-gradient-bg { background-image: url("../img/witness-orange-bg.jpeg"); background-size: cover; }
 
 .witness-grey-vector-bg-2 { background-image: url("../img/witness-last-bg.jpeg"); background-position: center center; background-size: cover; }
 
