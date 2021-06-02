@@ -74,17 +74,17 @@ body { font-family: Avenir; }
 /* Custom Components */
 .main-banner-bg { background-image: url("../img/main-banner-bg.jpeg"); background-repeat: no-repeat; background-size: cover; }
 
-.witness-main-banner-bg { background-image: url("https://taosolutions.dev/cloud/wl/?id=bI4fPyajxLT9eDoHFQ3O9Jg88BVIWdPj"); background-position: center center; background-size: cover; background-attachment: fixed; background-size: cover; }
+.witness-main-banner-bg { background-image: url("../img/witness-bg-main.jpeg"); background-position: center center; background-size: cover; background-attachment: fixed; background-size: cover; }
 
 .conveyor-main-banner-bg { background-image: url("../img/conveyor-bg-main.jpeg"); background-position: center center; background-size: cover; background-attachment: fixed; background-size: cover; }
 
-.witness-second-banner-bg { background-image: url("https://etacticsgroup.com/cloud/wl/?id=B99aEGaf2tTTY61gEokVle49gp2NFzSe"); background-position: center center; background-size: cover; background-attachment: fixed; }
+.witness-second-banner-bg { background-image: url("../img/witness-second-banner.png"); background-position: center center; background-size: cover; background-attachment: fixed; }
 
-.witness-third-banner-bg { background-image: url("https://etacticsgroup.com/cloud/wl/?id=B99aEGaf2tTTY61gEokVle49gp2NFzSe"); background-position: center center; background-size: cover; background-attachment: fixed; }
+.witness-third-banner-bg { background-image: url("../img/witness-second-banner.png"); background-position: center center; background-size: cover; background-attachment: fixed; }
 
-.witness-orange-gradient-bg { background-image: url("https://taosolutions.dev/cloud/wl/?id=a8BQtNBdBVU6WeO792sMMz7qMfIOubMW"); background-size: cover; }
+.witness-orange-gradient-bg { background-image: url("../img/witness-orange-banner.jpeg"); background-size: cover; }
 
-.witness-grey-vector-bg-2 { background-image: url("https://taosolutions.dev/cloud/wl/?id=46RXYQMWveaV2QTMOEcgndEYP3aW8Ecy"); background-position: center center; background-size: cover; }
+.witness-grey-vector-bg-2 { background-image: url("../img/witness-last-bg.jpeg"); background-position: center center; background-size: cover; }
 
 .technology-banner-bg { background-image: url("../img/third-banner-bg.png"); background-position: center center; background-repeat: no-repeat; background-size: cover; }
 
