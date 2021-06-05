@@ -353,6 +353,12 @@ body {
 /* Media Queries */
 
 @media (max-width: 768px) {
+.technology-lord-icon{
+  width:150px;
+  height:150px;
+  text-align: center;
+  margin:auto;
+}
   .top-position{
     top:40px;
   }

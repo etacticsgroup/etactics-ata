@@ -1,4 +1,4 @@
-url: "https://etacticsgroup.github.io/jekyll-ata" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://ata.network" # the base hostname & protocol for your site, e.g. http://example.com
 baseurl: "" # the subpath of your site, e.g. /blog
 title: "" # the name of your site, e.g. ACME Corp.
 sass:

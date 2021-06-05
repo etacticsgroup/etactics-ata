@@ -221,7 +221,7 @@ body { font-family: Avenir; }
 
 /* Footer */
 /* Media Queries */
-@media (max-width: 768px) { .top-position { top: 40px; } .mobile-text-center { text-align: center; } .mx-0-mobile { margin-left: 10px !important; margin-right: 10px !important; } .desktop-only { display: none; } .responsive-image { max-width: 100%; padding: 5px; /*Kai Tao*/ } #carouselExampleControls { margin-left: 10px; margin-right: 10px; } }
+@media (max-width: 768px) { .technology-lord-icon { width: 150px; height: 150px; text-align: center; margin: auto; } .top-position { top: 40px; } .mobile-text-center { text-align: center; } .mx-0-mobile { margin-left: 10px !important; margin-right: 10px !important; } .desktop-only { display: none; } .responsive-image { max-width: 100%; padding: 5px; /*Kai Tao*/ } #carouselExampleControls { margin-left: 10px; margin-right: 10px; } }
 
 @media (max-width: 425px) { .top-position { top: 64px; } }
 
